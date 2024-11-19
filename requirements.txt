@@ -8,3 +8,4 @@ sounddevice==0.5.1
 SpeechRecognition==3.11.0
 torch==2.5.1
 python-dotenv==1.0.1
+SinaTools==0.1.36
