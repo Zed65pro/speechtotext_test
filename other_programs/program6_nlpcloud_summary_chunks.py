@@ -71,7 +71,7 @@ class SpeechToTextApp:
             chunk = audio[start_ms:end_ms]
 
             # Export the chunk to a temporary file for recognition
-            chunk_path = "temp_chunk.wav"
+            chunk_path = "../temp_chunk.wav"
             chunk.export(chunk_path, format="wav")
             chunk_number = f"Transcribing chunk {start_ms // chunk_duration + 1}..."
             # Update UI progress

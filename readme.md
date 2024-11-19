@@ -24,3 +24,6 @@ to use sina tools use commands:
 download_files -f morph ner wsd synonyms
 
 after download SinaTools package, or you can download only the files that you require, this is needed to run sonatools
+
+
+to use sinatools disambiguate have to install PyArabic and Pandas and downgrade numpy to 1.*
