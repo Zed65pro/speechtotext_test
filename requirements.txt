@@ -7,3 +7,4 @@ pydub==0.25.1
 sounddevice==0.5.1
 SpeechRecognition==3.11.0
 torch==2.5.1
+python-dotenv==1.0.1

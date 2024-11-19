@@ -33,7 +33,7 @@ class SpeechToTextApp:
         self.export_path = "transcribed_text.txt"
 
     def upload_file(self):
-        self.wav_file = filedialog.askopenfilename(filetypes=[("WAV Files", "*.wav"),("MP3 files", "*.mp3")])
+        self.wav_file = filedialog.askopenfilename(filetypes=[("WAV Files", "*.wav"), ("MP3 files", "*.mp3")])
         if self.wav_file:
             self.convert_button.config(state="normal")
             self.progress_label.config(text="File uploaded successfully!")
@@ -48,7 +48,7 @@ class SpeechToTextApp:
 
         # Start the process in a separate thread to avoid freezing the GUI
         threading.Thread(target=self.process_file).start()
-#05587183042d894bb3232047c1333cd62b65a6ab
+
     def process_file(self):
         try:
             self.progress_label.config(text="Processing... Please wait.")

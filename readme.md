@@ -15,3 +15,6 @@ choco install ffmpeg
 
 # on Windows using Scoop (https://scoop.sh/)
 scoop install ffmpeg
+
+
+For nlpcloud please replace the token in .env with token from https://nlpcloud.com/home/token

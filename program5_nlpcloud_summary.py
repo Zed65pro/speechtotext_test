@@ -3,6 +3,8 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 import threading
 import nlpcloud
+from dotenv import load_dotenv
+import os
 
 
 class SpeechToTextApp:
@@ -48,10 +50,11 @@ class SpeechToTextApp:
         # Start the process in a separate thread to avoid freezing the GUI
         threading.Thread(target=self.process_file).start()
 
-    # 05587183042d894bb3232047c1333cd62b65a6ab
     def process_file(self):
         try:
-            token = 'b991a97a2c08ec4af566069aa91de61b372fd87f'
+            load_dotenv()
+            token = os.getenv("NLPCLOUD_TOKEN")
+
             self.progress_label.config(text="Processing... Please wait.")
             client = nlpcloud.Client("whisper", token, True)
 
@@ -64,7 +67,7 @@ class SpeechToTextApp:
                 result = client.asr(encoded_file=base64_output, input_language='ar')
                 self.transcribed_text = result["text"]
 
-                summary_client = nlpcloud.Client("finetuned-llama-3-70b",token, gpu=True)
+                summary_client = nlpcloud.Client("finetuned-llama-3-70b", token, gpu=True)
 
                 summarized_content = summary_client.summarization(text=result["text"])
                 self.transcribed_text += '\n\n\n\n' + summarized_content["summary_text"]

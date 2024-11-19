@@ -3,8 +3,8 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 import threading
 import nlpcloud
-
-
+from dotenv import load_dotenv
+import os
 class SpeechToTextApp:
     def __init__(self, root):
         self.root = root
@@ -50,7 +50,9 @@ class SpeechToTextApp:
 #05587183042d894bb3232047c1333cd62b65a6ab
     def process_file(self):
         try:
-            token = 'e3b37a88a8f9977aa390b7f79a4e7c14a67e563d'
+            load_dotenv()
+            token = os.getenv("NLPCLOUD_TOKEN")
+
             self.progress_label.config(text="Processing... Please wait.")
             client = nlpcloud.Client("whisper", token, True)
 

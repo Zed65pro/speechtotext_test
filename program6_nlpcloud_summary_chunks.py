@@ -4,6 +4,8 @@ from tkinter import filedialog, messagebox
 import threading
 import nlpcloud
 from pydub import AudioSegment
+from dotenv import load_dotenv
+import os
 
 
 class SpeechToTextApp:
@@ -49,10 +51,11 @@ class SpeechToTextApp:
         # Start the process in a separate thread to avoid freezing the GUI
         threading.Thread(target=self.process_file).start()
 
-    # 05587183042d894bb3232047c1333cd62b65a6ab
     def process_file(self):
 
-        token = '87097ac1296672b24f2d6ca902cb88af937f2c53'
+        load_dotenv()
+        token = os.getenv("NLPCLOUD_TOKEN")
+
         self.progress_label.config(text="Processing... Please wait.")
         client = nlpcloud.Client("whisper", token, True)
 
