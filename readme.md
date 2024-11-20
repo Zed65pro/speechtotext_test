@@ -25,5 +25,6 @@ download_files -f morph ner wsd synonyms
 
 after download SinaTools package, or you can download only the files that you require, this is needed to run sonatools
 
+and sinatools depends on torch=1.13.0
 
 to use sinatools disambiguate have to install PyArabic and Pandas and downgrade numpy to 1.*
