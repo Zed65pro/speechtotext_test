@@ -10,3 +10,4 @@ torch==1.13.0
 python-dotenv==1.0.1
 SinaTools==0.1.36
 pandas==2.2.3
+google-api-python-client==2.154.0

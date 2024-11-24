@@ -28,3 +28,5 @@ after download SinaTools package, or you can download only the files that you re
 and sinatools depends on torch=1.13.0
 
 to use sinatools disambiguate have to install PyArabic and Pandas and downgrade numpy to 1.*
+
+Include google credentials json inside root directory
